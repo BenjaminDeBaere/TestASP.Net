@@ -1,0 +1,14 @@
+﻿@model bool
+@{
+    ViewBag.Title = "Aanmelden";
+}
+
+@if (Model == true)
+{
+    <a href="~/Home/KiesGenre" class="bold">Ga naar verhuringen</a>
+}
+else
+{
+    <a href="~/Home/Index" class="bold">Foutieve gegevens, probeer opnieuw</a>
+}
+

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -Videoverhuur</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <img src="~/Images/videoVerhuur.jpg" alt="Videoverhuur" />
+    <div class="container body-content">
+        @if(Request.Cookies["KlantNaam"]==null)
+        {
+            <p>Eerst aanmelden om te kunnen huren</p>
+        }
+        else
+        {
+            <p>Welkom, @Request.Cookies["KlantNaam"].Value</p>
+        }
+
+        <a href="~/Home/Uitloggen">Uitloggen en naar beginpagina</a>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Videoverhuur VDAB</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

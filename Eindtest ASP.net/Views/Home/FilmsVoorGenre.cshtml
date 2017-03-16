@@ -1,0 +1,38 @@
+﻿@model List<Eindtest_ASP.net.Models.Film>
+
+@{
+    ViewBag.Title = "FilmsVoorGenre";
+}
+
+<h2>@ViewBag.Genre</h2>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Prijs</th>
+            <th>In Voorraad</th>
+            <th>Huren</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.Titel)</td>
+                <td>@Html.DisplayFor(m=>item.Prijs)</td>
+                <td>@Html.DisplayFor(m=>item.InVoorraad)</td>
+                <td>
+                    @if (item.InVoorraad > 0 && Session[item.BandNr.ToString()]==null)
+                    {
+                        <a href="~/Home/FilmHuren/@item.BandNr">Huren</a>
+                    }
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+<a href="~/Home/KiesGenre">Terug naar genre overzicht</a>

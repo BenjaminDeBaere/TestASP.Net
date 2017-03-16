@@ -1,0 +1,14 @@
+﻿@using Eindtest_ASP.net.Models
+@model Klant
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<form class="form-horizontal" action="~/Home/Aanmelden" method="get">
+    <div>@Html.LabelFor(m=>Model.Naam)</div>
+    <div class="col col-md-offset-1">@Html.EditorFor(m=>Model.Naam)</div>
+    <div>@Html.LabelFor(m=>Model.PostCode)</div>
+    <div class="col col-md-offset-1">@Html.EditorFor(m=>Model.PostCode)</div>
+
+    <input type="submit" value="Aanmelden" />
+</form>

@@ -1,0 +1,41 @@
+﻿@model Eindtest_ASP.net.ViewModels.ReservatieViewModel
+
+@{
+    ViewBag.Title = "Afrekenen";
+}
+
+<h2>Afrekenen</h2>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Prijs</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Films)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m=>item.Titel)</td>
+                <td>@Html.DisplayFor(m=>item.Prijs)</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Totaal:</th>
+            <th>@Html.DisplayFor(modelItem => Model.TotaalPrijs)</th>
+        </tr>
+    </tfoot>
+</table>
+
+<div>
+    <p>Wordt gefactureerd aan:</p>
+    <p>@Model.Klant.Voornaam @Model.Klant.Naam</p>
+    <p>@Model.Klant.Straat_Nr</p>
+    <p>@Model.Klant.PostCode @Model.Klant.Gemeente</p>
+</div>
+    
+
+

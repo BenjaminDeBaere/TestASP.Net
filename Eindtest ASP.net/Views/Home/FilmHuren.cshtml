@@ -1,0 +1,30 @@
+﻿@model List<Eindtest_ASP.net.Models.Film>
+@{
+    ViewBag.Title = "Winkelmandje";
+}
+<a href="~/Home/Afrekenen">Afrekenen</a>
+
+<h2>Winkelmandje</h2>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Prijs</th>
+            <th>Verwijderen</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(m=>item.Titel)</td>
+            <td>@Html.DisplayFor(m=>item.Prijs)</td>
+            <td><a href="~/Home/Verwijderen/@item.BandNr">Verwijderen</a></td>
+        </tr>
+        }
+
+    </tbody>
+
+</table>
+<a href="~/Home/KiesGenre">Verder winkelen</a>

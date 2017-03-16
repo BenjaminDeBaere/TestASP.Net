@@ -1,0 +1,13 @@
+﻿@model Eindtest_ASP.net.Models.Film
+
+@{
+    ViewBag.Title = "Verwijderen";
+}
+
+<h2>Verwijder gehuurde film</h2>
+
+<p>Ben je zeker dat je @Model.Titel niet wil huren?</p>
+
+<a href="~/Home/VerwijderingDoorvoeren/@Model.BandNr">Ja</a>
+<a href="~/Home/Mandje">Neen</a>
+

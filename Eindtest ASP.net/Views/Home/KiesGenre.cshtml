@@ -1,0 +1,17 @@
+﻿@model List<Eindtest_ASP.net.Models.Genre>
+
+@{
+    ViewBag.Title = "KiesGenre";
+}
+
+<h3>Klik op het gewenste genre</h3>
+<ul class="nav nav-justified">
+    @foreach (var item in Model)
+    {
+        var url = Url.Action("FilmsVoorGenre", "Home", new { id = item.GenreNr });
+        <li class="active">
+            <a href="@url">@item.Naam</a>
+        </li>
+    }
+</ul>
+
